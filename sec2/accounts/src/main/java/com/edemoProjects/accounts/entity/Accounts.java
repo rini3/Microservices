@@ -7,13 +7,12 @@ import lombok.*;
 @Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
 public class Accounts extends BaseEntity{
 
+    @Column(name="customer_id")
     private Long customerId;
 
-    @Column(name="account_number")
-    @Id
+    @Id @Column(name="account_number")
     private Long accountNumber;
 
     private String account_type;
     private String branch_address;
-    private String mobileNumber;
 }
