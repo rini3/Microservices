@@ -1,4 +1,4 @@
-package com.edemoProjects.loans;
+package com.edemoProjects.accounts;
 
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -10,33 +10,31 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-/*@ComponentScans({ @ComponentScan("com.eazybytes.loans.controller") })
-@EnableJpaRepositories("com.eazybytes.loans.repository")
-@EntityScan("com.eazybytes.loans.model")*/
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
 @OpenAPIDefinition(
 		info = @Info(
-				title = "Loans microservice REST API Documentation",
-				description = "EazyBank Loans microservice REST API Documentation",
+				title = "Accounts microservice REST API Documentation",
+				description = "EazyBank Accounts microservice REST API Documentation",
 				version = "v1",
 				contact = @Contact(
-						name = "Madan Reddy",
-						email = "tutor@eazybytes.com",
-						url = "https://www.eazybytes.com"
+						name = "Rini Dabral",
+						email = "rini03dabral@gmail.com"
 				),
 				license = @License(
 						name = "Apache 2.0",
-						url = "https://www.eazybytes.com"
+						url = "url for more license details"
 				)
 		),
-		externalDocs = @ExternalDocumentation(
-				description = "EazyBank Loans microservice REST API Documentation",
-				url = "https://www.eazybytes.com/swagger-ui.html"
+		externalDocs = @ExternalDocumentation( //to learn more about the application
+				description =  "EazyBank Accounts microservice REST API Documentation",
+				url = "documentation url"
 		)
 )
-public class LoansApplication {
+public class AccountsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LoansApplication.class, args);
+		SpringApplication.run(AccountsApplication.class, args);
 	}
+
 }
+
