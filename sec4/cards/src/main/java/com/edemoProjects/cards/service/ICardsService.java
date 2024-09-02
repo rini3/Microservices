@@ -1,6 +1,6 @@
 package com.edemoProjects.cards.service;
 
-import com.eazybytes.cards.dto.CardsDto;
+import com.edemoProjects.cards.dto.CardsDto;
 
 public interface ICardsService {
 

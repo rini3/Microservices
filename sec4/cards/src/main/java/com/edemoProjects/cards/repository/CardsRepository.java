@@ -1,6 +1,6 @@
 package com.edemoProjects.cards.repository;
 
-import com.eazybytes.cards.entity.Cards;
+import com.edemoProjects.cards.entity.Cards;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
