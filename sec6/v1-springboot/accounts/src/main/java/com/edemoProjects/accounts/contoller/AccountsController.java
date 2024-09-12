@@ -1,6 +1,7 @@
 package com.edemoProjects.accounts.contoller;
 
 import com.edemoProjects.accounts.constants.AccountsConstants;
+import com.edemoProjects.accounts.dto.AccountsContactInfoDto;
 import com.edemoProjects.accounts.dto.CustomerDto;
 import com.edemoProjects.accounts.dto.ErrorResponseDto;
 import com.edemoProjects.accounts.dto.ResponseDto;
@@ -39,6 +40,9 @@ public class AccountsController {
 
     @Autowired
     private Environment environment;
+
+    @Autowired
+    private AccountsContactInfoDto accountsContactInfoDto;
 
     @Value("${build.version}")
     private String buildVersion;
@@ -222,7 +226,33 @@ public class AccountsController {
                 .body(environment.getProperty("MAVEN_HOME"));
     }
 
+    @Operation(
+            summary = "Get Contact Info",
+            description = "Contact Info details that can be reached out in case of any issues"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDto);
+    }
+
 }
+
 
 
 
