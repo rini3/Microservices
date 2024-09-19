@@ -9,9 +9,6 @@ spring:
     url: jdbc:mysql://localhost:3307/loansdb
     username: root
     password: root
-  h2:
-    console:
-      enabled: true
   jpa:
     show-sql: true
   sql:
